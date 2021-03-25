@@ -42,7 +42,7 @@ fun main() {
                 println(stack.toString())
             }
             2-> {
-                println("가장 위의 아이템을 제거합니다")
+                println("가장 위의 아이템을 반환한 뒤 삭제합니다")
                 try {
                     stack.pop()
                 }catch (e: Exception){
@@ -66,7 +66,11 @@ fun main() {
                     println(stack.search(item))
             }
             6-> println("stack의 사이즈는 " + stack.size() + "입니다")
-            7-> println(stack.isEmpty())
+            7-> if(stack.isEmpty()) {
+                println("stack이 비어있습니다")
+            }else {
+                println("stack이 비어있지 않습니다.")
+            }
             8-> if(stack.isEmpty()) println("stack이 비어있습니다")
             else println(stack.toString())
 

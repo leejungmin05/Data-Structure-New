@@ -27,6 +27,9 @@ class Stack<E> : StackInterface<E> {
         if (isEmpty()) {
             throw Exception("stack is Empty ")
         }
+        else {
+            println(array[top])
+        }
         return array[top--]
     }
 

@@ -14,22 +14,21 @@ fun main() {
     stack.push(6)
     stack.push(7)
 
-
-//    println(stack.pop())
-//    println(stack.pop())
-
-
     println(stack.toString())
 
 
-    while(true){
+    while (true) {
         print(
-            "\n명령어를 입력해주세요\n"+
+            "\n명령어를 입력해주세요\n" +
                     "1 : push 2: pop 3: peek 4: clear 5:search 6: size 7: empty 8: print 9: exit \n >>>"
         )
-        val a = try {(readLine() ?: "").toInt()} catch (e : Exception) {println("숫자만 입력하세요")}
+        val a = try {
+            (readLine() ?: "").toInt()
+        } catch (e: Exception) {
+            println("숫자만 입력하세요")
+        }
 
-        when(a) {
+        when (a) {
             1 -> {
                 print("push 할 아이템을 입력하세요 : ")
                 val item = try {
@@ -77,21 +76,21 @@ fun main() {
                     if (stack.search(item) == -1) {
                         println("입력하신 아이템이 없습니다")
                     } else
-                        println("아이템은 top으로부터 "+stack.search(item) + "번째에 있습니다")
+                        println("아이템은 top으로부터 " + stack.search(item) + "번째에 있습니다")
                 } catch (e: Exception) {
                     println("스택이 비어있습니다.")
                 }
             }
-            6-> println("stack의 사이즈는 " + stack.size() + "입니다")
-            7-> if(stack.isEmpty()) {
+            6 -> println("stack의 사이즈는 " + stack.size() + "입니다")
+            7 -> if (stack.isEmpty()) {
                 println("stack이 비어있습니다")
-            }else {
+            } else {
                 println("stack이 비어있지 않습니다.")
             }
-            8-> if(stack.isEmpty()) println("stack이 비어있습니다")
+            8 -> if (stack.isEmpty()) println("stack이 비어있습니다")
             else println(stack.toString())
 
-            9-> return
+            9 -> return
 
         }
     }

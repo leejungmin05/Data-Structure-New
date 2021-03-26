@@ -26,8 +26,7 @@ class Stack<E> : StackInterface<E> {
     override fun pop(): E {
         if (isEmpty()) {
             throw Exception("stack is Empty ")
-        }
-        else {
+        } else {
             println(array[top])
         }
         return array[top--]

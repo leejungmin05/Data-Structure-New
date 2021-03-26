@@ -10,12 +10,12 @@ class Queue<E> : QueueInterface<E> {
     private fun resize(size: Int) {
         val newQueue: Array<E> = Array(size) { i -> Any() } as Array<E>
         var i = 1
-        var j = front+1
+        var j = front + 1
         while (queue.size > i) {
             newQueue[i++] = queue[j++ % queue.size]
         }
         front = 0
-        rear = queue.size-1
+        rear = queue.size - 1
         queue = newQueue
 
 
@@ -25,14 +25,14 @@ class Queue<E> : QueueInterface<E> {
         if ((rear + 1) % queue.size == front) {
             resize(queue.size * 2)
         }
-        rear = (rear+1)% queue.size
+        rear = (rear + 1) % queue.size
         queue[rear] = e
         size++
         return true
     }
 
     private fun isEmpty(): Boolean {
-        return size==0
+        return size == 0
     }
 
     override fun remove(): E? {
@@ -60,7 +60,7 @@ class Queue<E> : QueueInterface<E> {
 
     override fun toString(): String {
         var result = ""
-        for (i in front+1 until rear+1) {
+        for (i in front + 1 until rear + 1) {
             result += (queue[i % queue.size].toString() + " ")
         }
         return result

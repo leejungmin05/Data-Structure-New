@@ -1,7 +1,12 @@
 package list
 
 class Node<E> {
-    var data: E? = null
-    var next: Node<E>? = null
+    val data: E
+    var next: Node<E>
+
+    constructor(newData: E, node: Node<E>) {
+        data = newData
+        next = node
+    }
 
 }

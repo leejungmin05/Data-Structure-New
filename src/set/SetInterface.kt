@@ -21,6 +21,9 @@ interface SetInterface<E> {
     // 요소의 개수
     fun size(): Int
 
+    //fun equals()
+
+    //fun hashCode()
 
 
 }

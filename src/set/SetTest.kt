@@ -20,15 +20,16 @@ fun main() {
 
         when (a) {
             1 -> {
-                print("set에 추가 할 숫자 입력하세요 : ")
+                print("set에 추가 할 숫자를 입력하세요 : ")
                 val e = try {
                     (readLine() ?: "").toInt()
                 } catch (e: NumberFormatException) {
                     println("숫자를 입력하세요")
                     continue
                 }
-                set.add(e)
+                if(set.add(e))
                 println("추가 되었습니다")
+                else println("이미 존재하는 요소입니다")
 
             }
             2 -> {
@@ -36,7 +37,7 @@ fun main() {
                     println("모든 요소가 삭제됩니다.")
                     set.clear()
                 } catch (e: Exception) {
-                    println("set 비어있습니다")
+                    println("set이 비어있습니다")
                 }
 
             }
